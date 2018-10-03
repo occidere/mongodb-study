@@ -1,5 +1,8 @@
 #/bin/bash
 
+HOST_VOLUME="$HOME/data/db"
+mkdir -p $HOST_VOLUME
+
 status() {
     docker ps -a | head -1 # header
     docker ps -a | grep centos7.*mongodb
@@ -27,7 +30,7 @@ build() {
 
 run() {
     echo 'Run docker process'
-    docker run --network bridge -it centos7:mongodb
+    docker run --network bridge -v $HOST_VOLUME:/data/db -it centos7:mongodb
 }
 
 attach() {

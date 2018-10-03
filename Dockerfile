@@ -34,6 +34,7 @@ RUN echo 'cl() { clear; ls -Fhal --color=auto; }' >> $PROFILE
 RUN echo 'cdl() { clear; cd "$@" && ls -Fhal --color=auto; }' >> $PROFILE
 RUN echo 'export PS1="\[\e[1;34m\]DOCKER\[\e[m\]\[\e[1;34m\]-\[\e[m\][\h:\w] "' >> $PROFILE
 RUN echo 'export PATH=$PATH:$JAVA_HOME/bin:/root/apps/mongodb/bin' >> $PROFILE
+RUN echo 'export TZ="Asia/Seoul"' >> $PROFILE
 
 # mongod 를 백그라운드로 실행시키고, /bin/bash 를 실행하는 스크립트
 ENV MONGO_SCRIPT /root/script/run_with_mongo.sh

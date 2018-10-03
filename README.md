@@ -29,8 +29,10 @@ sh docker_script.sh ${실행할 명령어}
 ````
 * 명령어 목록
     * build: 도커 이미지를 centos7:mongodb 태그로 빌드
-    * run: centos7:mongodb 태그로 생성된 도커 이미지 실행
+    * run: centos7:mongodb 도커 이미지로부터 도커 프로세스를 새로 생성 & 실행
         * 다시 터미널로 나오려면 `Ctrl + p + q` 를 누른다
+    * attach: **기존에 생성됬던 도커 프로세스를 재 실행**
+        * Ctrl + p + q로 나갔던 프로세스를 재 실행시킨다
     * stop: 도커 프로세스 중지
     * rm: 도커 프로세스 삭제
     * clean

@@ -1,5 +1,10 @@
 #/bin/bash
 
+status() {
+    docker ps -a | head -1 # header
+    docker ps -a | grep centos7.*mongodb
+}
+
 rm_img() {
     echo 'Remove image'
     docker image ls | grep centos7.*mongodb | awk -F' ' '{print $3}' | xargs docker image rm
@@ -34,12 +39,14 @@ usage() {
     echo ''
     echo -e 'Usage: sh docker_script.sh ${CMD}\n'
     echo '명령어 목록:'
-    echo -e '  build:  도커 이미지를 centos7:mongodb 태그로 빌드'
-    echo -e '  run:    centos7:mongodb 태그로 생성된 도커 이미지 실행'
-    echo -e '          (다시 터미널로 나오려면 Ctrl + p + q 를 누른다)'
-    echo -e '  stop:   도커 프로세스 중지'
-    echo -e '  rm:     도커 프로세스 삭제'
-    echo -e '  clean:  도커 프로세스 중지 + 도커 프로세스 삭제 + 도커 이미지 삭제'
+    echo -e '  build:        도커 이미지를 centos7:mongodb 태그로 빌드'
+    echo -e '  run:          centos7:mongodb 태그로 생성된 도커 이미지 실행'
+    echo -e '                (다시 터미널로 나오려면 Ctrl + p + q 를 누른다)'
+    echo -e '  stop:         도커 프로세스 중지'
+    echo -e '  rm:           도커 프로세스 삭제'
+    echo -e '  clean:        도커 프로세스 중지 + 도커 프로세스 삭제 + 도커 이미지 삭제'
+    echo -e '  status:       centos7:mongodb 태그로 생성된 도커 프로세스의 상태 확인'
+    echo -e '  -h | --help:  도움말 출력'
     echo ''
     echo '사용 예시:'
     echo '  ./docker_script.sh run'
@@ -61,6 +68,14 @@ do
 key="$1"
 
 case $key in
+    -h|--help)
+    usage
+    shift
+    ;;
+    status)
+    status
+    shift
+    ;;
     build)
     build
     shift
@@ -70,7 +85,7 @@ case $key in
     shift
     ;;
     stop)
-    stop
+    stop_ps
     shift
     ;;
     rm)

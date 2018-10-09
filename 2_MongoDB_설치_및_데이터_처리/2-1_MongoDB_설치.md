@@ -59,7 +59,7 @@ mongod --dbpath /data/db  # /data/db 폴더가 만들어져 있어야 함
 
 * `vim mongodb.conf` 으로 아래 내용 저장
 
-  ````yml
+  ````bash
   systemlog:
   	destination: file
   	path: /var/log/mongod.log	# log 파일 생성 경로

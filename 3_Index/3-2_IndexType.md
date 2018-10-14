@@ -220,7 +220,7 @@ db.spatial.ensureIndex({pos: "2d"}) // 2D 인덱스 생성 (안 하면 검색 �
 
 ### 연산자 종류
 
-* **$near** : 해당 좌표를 기준으로 가장 가까이 있는 n 개의 좌표 검색
+* **$near** : 해당 좌표를 기준으로 가장 가까이 있는 n 개의 좌표 검색 </br>
   <img src="https://user-images.githubusercontent.com/20942871/46913874-96813f00-cfd0-11e8-9725-60768da8c083.png" width="50%" />
 
   ````javascript
@@ -231,7 +231,7 @@ db.spatial.ensureIndex({pos: "2d"}) // 2D 인덱스 생성 (안 하면 검색 �
   }).limit(5)	// 가장 가까이 있는 5개 추출
   ````
 
-* **$center** : 해당 좌표를 기준으로 가장 가까운 원형 좌표 검색
+* **$center** : 해당 좌표를 기준으로 가장 가까운 원형 좌표 검색 </br>
   <img src="https://user-images.githubusercontent.com/20942871/46913909-3a6aea80-cfd1-11e8-8a2e-02a7787521ff.png" width="50%" />
 
   ````javascript
@@ -246,7 +246,7 @@ db.spatial.ensureIndex({pos: "2d"}) // 2D 인덱스 생성 (안 하면 검색 �
   }, {_id: 0})
   ````
 
-* **$box** : 해당 좌표를 기준으로 가장 가까운 Box 형 좌표를 검색
+* **$box** : 해당 좌표를 기준으로 가장 가까운 Box 형 좌표를 검색 </br>
   <img src="https://user-images.githubusercontent.com/20942871/46913972-e3b1e080-cfd1-11e8-94e8-99b69f485b9a.png" width="50%" />
 
   ````javascript
@@ -261,7 +261,7 @@ db.spatial.ensureIndex({pos: "2d"}) // 2D 인덱스 생성 (안 하면 검색 �
   }, {_id: 0})
   ````
 
-* **$polygon** : 해당 좌표를 기준으로 가장 가까운 다면체 좌표 검색
+* **$polygon** : 해당 좌표를 기준으로 가장 가까운 다면체 좌표 검색 </br>
   <img src="https://user-images.githubusercontent.com/20942871/46914006-88342280-cfd2-11e8-9d6e-9878c2198ae1.png" width="50%" />
 
   ````javascript
@@ -276,7 +276,7 @@ db.spatial.ensureIndex({pos: "2d"}) // 2D 인덱스 생성 (안 하면 검색 �
   }, {_id: 0})
   ````
 
-* **$centerSphere** : 중점을 기준으로 지정한 반경 내에 속하는 좌표(경도, 위도)를 반환. 
+* **$centerSphere** : 중점을 기준으로 지정한 반경 내에 속하는 좌표(경도, 위도)를 반환.  </br>
   (centerSphere는 2차원 원이 아닌 3차원 구체 내에 속하는 값 검색)
 
   ````javascript

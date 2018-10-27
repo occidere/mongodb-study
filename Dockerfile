@@ -13,8 +13,8 @@ RUN yum install -y -q vim wget net-tools
 RUN mkdir apps deploy script logs
 
 # Oracle JDK1.8 설치
-RUN wget -q --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.tar.gz
-RUN tar -zxf jdk-8* && rm -rf jdk-8*.tar.gz && mv jdk1.8.0_181 apps/
+RUN wget -q --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u192-b12/750e1c8617c5452694857ad95c3ee230/jdk-8u192-linux-x64.tar.gz
+RUN tar -zxf jdk-8* && rm -rf jdk-8*.tar.gz && mv jdk1.8.0_192 apps/
 
 # MongoDB-3.6 설치
 RUN wget -q https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-3.6.8.tgz
@@ -24,7 +24,7 @@ RUN tar -zxf mongodb-linux-*.tgz && rm -rf *tgz && mv mongodb-* mongodb && mv mo
 EXPOSE 27017
 
 # 각종 환경설정
-ENV JAVA_HOME /root/apps/jdk1.8.0_181
+ENV JAVA_HOME /root/apps/jdk1.8.0_192
 ENV LANG ko_KR.UTF-8
 RUN echo 'set encoding=utf-8' >> /etc/vimrc
 ENV PROFILE /root/.bashrc
